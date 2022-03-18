@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+  "use strict";
+    let getallen = [];
+    //getall opvragen
+    let aantal_getallen = prompt("Hoeveel getallen wil je ingeven?");
+    //functie uitvoeren
+    let resultaat = input_controle(aantal_getallen);
+    //voorwaarde
+    if (resultaat!=0 && aantal_getallen>0) {
+      for (let i=0; i<aantal_getallen;i++) {
+        let getal = prompt(`Geef getal ${i+1} in.`);
+        array_opvullen(i,getal);
+      }
+    }
+
+    //functies
+    //functie  getalencontrole
+    function input_controle (input1) {
+      if (input1==null) {
+        document.write("Je hebt geanuleert!")
+      }
+      else if (input1.length==0) {
+        document.write("Je hebt niets ingegeven!")
+      }
+      else if (isNaN(input1)==true) {
+        document.write("Je hebt geen getal ingegeven!")
+        return 0;
+      }
+      }
+      //functie array opvullen
+      function array_opvullen (input1,input2) {
+
+        if (input2==null) {
+        return "fout";
+      }
+      else if (input2.length==0) {
+        return "fout";
+      }
+      else if (isNaN(input2)==true) {
+        return "fout";
+      }
+      else {
+        getallen[input1] = input2;
+      }
+      }
+      //functie getal controleren
+      function getal_controle () {
+        for (let i=0; i<aantal_getallen;i++) {
+          if (getallen[i]==null) {
+        let fout = "fout"
+        return fout;
+      }
+      else if (getallen[i]==0) {
+        let fout = "fout"
+        return fout;
+      }
+      else if (getallen[i]==true) {
+        let fout = "fout"
+        return fout;
+      }
+      else {
+        let fout = getallen
+        return fout;
+      }
+      }
+
+      }
+      //array printen met voorwarde
+      let fout = getal_controle();
+      if (fout=="fout") {
+        document.write(`<p>${fout}</p>`);
+      }
+      else {
+        document.write(`<p>de getallen zijn ${fout}.</p>`);
+      }
+
+    </script>
+  </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //voornaam
+    voornaam = prompt("Wat is je voornaam?");
+    resultaat = naamcontrole(voornaam)
+      //achernaam
+      //voowaarde
+      if (resultaat!=false) {
+      achternaam = prompt("Wat is je achternaam?");
+      resultaat_2 = naamcontrole(achternaam)
+      }
+
+      //controle achernaam
+      if (resultaat_2!=false) {
+        document.write(`Hey ${resultaat} ${resultaat_2}!`)
+      }
+
+      //functies
+
+      //functie naamcontrole
+      function naamcontrole(input1) {
+       if (input1==null) {
+        document.write("U heeft geannulleerd!");
+        return false;
+      }
+      else if (input1.length==0) {
+        document.write("U heeft niets ingegeven!");
+        return false;
+      }
+      else if (input1.length<=2) {
+        document.write("Geef minimum 2 karakters in!");
+        return false;
+      }
+      else {
+        return input1.charAt(0).toUpperCase() + input1.slice(1);
+      }
+      }
+
+    </script>
+  </body>
